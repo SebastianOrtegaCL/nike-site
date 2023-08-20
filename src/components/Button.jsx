@@ -15,7 +15,9 @@ const Button = ({label, iconURL}) => {
     leading-none
     bg-coral-red
     text-white
-    border-coral-red">
+    border-coral-red
+    hover:bg-red-500
+    ">
         {label}
         <img src={iconURL} alt="arrow right icon"
         className=" rounded-full ml-2 w-10 h-10" />
