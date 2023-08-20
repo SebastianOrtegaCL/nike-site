@@ -3,11 +3,15 @@ import {arrowRight} from '../assets/icons'
 import { statistics, shoes } from "../constants";
 import { bigShoe1 } from "../assets/images";
 import ShoeCard from "../components/ShoeCard.jsx";
+import {useState} from "react";
 
 const Hero = () => {
+
+    const [bigShoeImg, setBigShoeImg] = useState(bigShoe1)
+
   return (
     <section
-     className="w-full flex xl:flex-row flex-col justify-center min-h-screen gap-10 max-container" id="home">
+     className="xl:padding-l wide:padding-r padding-b w-full flex xl:flex-row flex-col justify-center min-h-screen gap-10 max-container" id="home">
       <div className="
       relative xl:w-2/5
       flex flex-col justify-center 
@@ -23,9 +27,9 @@ const Hero = () => {
           comfort, and innovation for your active life
         </p>
         <Button label='Shop now' iconURL={arrowRight} />
-        <div className="flex justify-start items-start flex-wrap w-full mt-20 gap-16 border-2 border-red-600">
+        <div className="flex justify-start items-start flex-wrap w-full mt-20 gap-16 ">
           {
-            statistics.map((item, index) => (
+            statistics.map((item) => (
               <div key={item.label} >
                 <p className="font-palanquin font-bold text-4xl">{item.value}</p>
                 <p className="leading-7 font-montserrat text-slate-gray">{item.label}</p>
@@ -34,12 +38,22 @@ const Hero = () => {
         </div>
       </div>
       <div className=' relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:py-40 bg-primary bg-hero bg-cover bg-center'>
-        <img src={ bigShoe1 } alt="big-shoe" width={610} height={500} className='object-contain relative z-10' />
+        <img
+            src={ bigShoeImg }
+            alt="big-shoe"
+            width={610}
+            height={500}
+            className='object-contain relative z-10'
+        />
           <div className='flex sm:gap-6 gap-4 absolute -bottom-[-5%] sm:left-[10%]'>
               {
-                  shoes.map((shoe) => (
-                      <div key={shoe}>
-                        <ShoeCard imgURL={shoe} changeBigShoeImage={ () => {}} bigShoeImg="" />
+                  shoes.map((image, index) => (
+                      <div key={index}>
+                        <ShoeCard
+                            index={index}
+                            imgURL={image}
+                            changeBigShoeImage={ (shoe) => setBigShoeImg(shoe) }
+                            bigShoeImg={bigShoeImg} />
                       </div>
                   ))
               }
@@ -50,4 +64,3 @@ const Hero = () => {
 }
 
 export default Hero
-
