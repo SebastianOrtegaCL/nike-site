@@ -8,14 +8,12 @@ const Button = ({label, iconURL}) => {
     gap-2
     px-7
     py-4
-    border
     rounded-full
     font-montserrat
     text-lg
     leading-none
     bg-coral-red
     text-white
-    border-coral-red
     hover:bg-red-500
     ">
         {label}
