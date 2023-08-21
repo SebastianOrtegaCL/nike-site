@@ -18,7 +18,9 @@ const SuperQuality = () => {
                 mt-4
                 font-monserrat
                 text-slate-gray
-                bg-green-200'>
+                lg:max-w-lg
+                info-text
+                '>
                 Discover footwear that transcends mere fashion, embodying craftsmanship at its finest. Each step you take in our shoes reflects our dedication to providing you with nothing but the best. Experience the luxury of unparalleled quality with every stride.
             </p>
 
