@@ -1,5 +1,5 @@
 
-const Button = ({label, iconURL}) => {
+const Button = ({label, iconURL, backgroundColor}) => {
   return (
     <button className="
     flex

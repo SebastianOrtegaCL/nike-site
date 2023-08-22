@@ -1,7 +1,10 @@
 const CustomerReviews = () => {
   return (
     <section className=" bg-pale-blue padding ">
-        Customer Review
+        <div>
+
+        </div>
+
     </section>
   )
 }
